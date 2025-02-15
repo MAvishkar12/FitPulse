@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography, TextField, Button } from "@mui/material";
 import { fetchdata, exerciseOptions } from "../utils/fetchdata";
 import HorizontalScroll from "../components/HorizontalScroll";
-function SearchExercise() {
+function SearchExercise({setExerciseList,setBodyPart,bodyPart,exerciseList}) {
   const [search, setSearch] = useState("");
-  const [exerciseList, setExerciseList] = useState([]);
-  const [bodyPart, setBodyPart] = useState([]);
-
+  
+     // console.log("Search bar ",bodyPart);
+      
   useEffect(() => {
     const fetchBody = async () => {
       const bodyparts = await fetchdata(
@@ -14,9 +14,12 @@ function SearchExercise() {
         exerciseOptions
       );
       setBodyPart(["all", ...bodyparts]);
+     
+     
+      
     };
     fetchBody();
-  });
+  },[]);
 
   const handleSearch = async () => {
     if (search) {
@@ -82,7 +85,11 @@ function SearchExercise() {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", padding: "20px" }}>
-        <HorizontalScroll />
+        <HorizontalScroll data={bodyPart} 
+         setExerciseList={setExerciseList} 
+         setBodyPart={setBodyPart}
+         bodyPart={bodyPart}
+         />
       </Box>
     </Stack>
   );
