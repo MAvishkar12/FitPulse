@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography, TextField, Button } from "@mui/material";
 import { fetchdata, exerciseOptions } from "../utils/fetchdata";
 import HorizontalScroll from "../components/HorizontalScroll";
-function SearchExercise({setExerciseList,setBodyPart,bodyPart,exerciseList}) {
+function SearchExercise({setExercises,setBodyPart,bodyPart}) {
   const [search, setSearch] = useState("");
+  const [bodyParts, setBodyParts] = useState([]);
   
      // console.log("Search bar ",bodyPart);
       
@@ -13,7 +14,7 @@ function SearchExercise({setExerciseList,setBodyPart,bodyPart,exerciseList}) {
         "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
         exerciseOptions
       );
-      setBodyPart(["all", ...bodyparts]);
+      setBodyParts(["all", ...bodyparts]);
      
      
       
@@ -24,19 +25,18 @@ function SearchExercise({setExerciseList,setBodyPart,bodyPart,exerciseList}) {
   const handleSearch = async () => {
     if (search) {
       const exercisedata = await fetchdata(
-        "https://exercisedb.p.rapidapi.com/exercises?limit=500",
+        "https://exercisedb.p.rapidapi.com/exercises?limit=1000",
         exerciseOptions
       );
-      console.log(exercisedata);
+      
       const searchexercises = exercisedata.filter(
-        (exercise) =>
-          exercise.name.toLowerCase().includes(search) ||
+        (exercise) => exercise.name.toLowerCase().includes(search) ||
           exercise.bodyPart.toLowerCase().includes(search) ||
           exercise.equipment.toLowerCase().includes(search) ||
           exercise.target.toLowerCase().includes(search)
       );
       setSearch("");
-      setExerciseList(searchexercises);
+      setExercises(searchexercises);
     }
   };
   return (
@@ -85,10 +85,12 @@ function SearchExercise({setExerciseList,setBodyPart,bodyPart,exerciseList}) {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", padding: "20px" }}>
-        <HorizontalScroll data={bodyPart} 
-         setExerciseList={setExerciseList} 
-         setBodyPart={setBodyPart}
+        <HorizontalScroll 
+        data={bodyParts} 
+        
+         setBodyParts={setBodyParts}
          bodyPart={bodyPart}
+         setBodyPart={setBodyPart}
          />
       </Box>
     </Stack>

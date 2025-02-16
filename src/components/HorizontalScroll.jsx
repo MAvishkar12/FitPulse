@@ -1,27 +1,22 @@
-
-import { Box } from "@mui/material"
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import { Box, Typography } from "@mui/material";
 
 import BodyPart from "./BodyPart";
-function HorizontalScroll({data,setExerciseList,setBodyPart,bodyPart}) {
-  console.log("Data inside Horizontal",data);
-  
+
+function HorizontalScroll({ data, setBodyParts, bodyPart, setBodyPart }) {
   return (
-    <ScrollMenu>
-    <div>
-      {data.map((item)=>(
+    <div style={{ display: "flex", overflow: "auto" }}>
+      {data.map((item) => (
         <Box key={item.id || item} m="0 40px">
-         <BodyPart 
-         item={item}
-         setExerciseList={setExerciseList}
-         setBodyPart={setBodyPart}
-         bodyPart={bodyPart}
-         />
-      </Box>
-    ))}
+          <BodyPart
+            item={item}
+            setBodyParts={setBodyParts}
+            setBodyPart={setBodyPart}
+            bodyPart={bodyPart}
+          />
+        </Box>
+      ))}
     </div>
-    </ScrollMenu>
-  )
+  );
 }
 
-export default HorizontalScroll
+export default HorizontalScroll;
