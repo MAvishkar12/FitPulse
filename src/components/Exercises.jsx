@@ -15,7 +15,25 @@ function Exercises({exercises,bodyPart,setExercises}) {
     setCurrentPage(value)
     window.scrollTo({top:1800,behavior:"smooth"})
   }
-  console.log("The exercise array inside a",exercises);
+useEffect(()=>{
+  const fetchExercises= async()=>{
+    let exerciseData=[];
+    if(bodyPart==="all"){
+      exerciseData= await fetchdata(
+        "https://exercisedb.p.rapidapi.com/exercises?limit=1500",
+        exerciseOptions
+      );
+    }
+    else{ 
+      exerciseData= await fetchdata(
+        `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=1500`,
+        exerciseOptions
+      );
+    }
+    setExercises(exerciseData)
+  }
+  fetchExercises()
+},[bodyPart])
   
   return (
     <Box id="exercises"
