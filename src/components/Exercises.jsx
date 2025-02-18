@@ -31,6 +31,8 @@ useEffect(()=>{
       );
     }
     setExercises(exerciseData)
+    console.log("List of exercise",exerciseData);
+    
   }
   fetchExercises()
 },[bodyPart])
