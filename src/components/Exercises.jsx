@@ -18,6 +18,7 @@ function Exercises({exercises,bodyPart,setExercises}) {
 useEffect(()=>{
   const fetchExercises= async()=>{
     let exerciseData=[];
+   
     if(bodyPart==="all"){
       exerciseData= await fetchdata(
         "https://exercisedb.p.rapidapi.com/exercises?limit=1500",

@@ -4,7 +4,7 @@ function ExercisesCard({exercise}) {
   
      
   return (
-    <Link  className="exercise-card" to={`/exercise/${exercise.id}`}>
+    <Link  className="exercise-card" to={`/exercises/${exercise.id}`}>
          <img src={exercise.gifUrl} alt={exercise.name} loading="lazy"></img>
          <Stack direction="row">
             <Button sx={{ml:"21px",color:"#ffffff" ,background:"#FFa9a9",fontSize:"14px",borderRadius:"20px",textTransform:"capitalize"}}>

@@ -8,20 +8,26 @@ import { Box } from "@mui/material";
 
 function ExerciseDetail() {
   const[execiseDetail,setExerciseDetail]=useState({});
-  const {id}=useParams()
+  const {id}=useParams();
+  const data=useParams();
+  console.log(
+    'data',data);
+  
+  
   useEffect(()=>{
         const fetchExerciseData=async ()=>{
               const exerciseDbURL='https://exercisedb.p.rapidapi.com'
               const youtubeSearchURL='https://youtube-search-and-download.p.rapidapi.com'
 
-              const exerciseDetailData= await fetchdata(`${exerciseDbURL}/exercises/${id}`,exerciseOptions)
+              const exerciseDetailData= await fetchdata(`${exerciseDbURL}/exercises/exercise/${id}`,exerciseOptions)
+              setExerciseDetail(exerciseDetailData)
         }
 
         fetchExerciseData()
   },[id])
   return (
    <Box>
-    <Describtion/>
+    <Describtion execiseDetail={execiseDetail} />
     <ExerciseVideo/>
     <SimilarExercise/>
    </Box>
