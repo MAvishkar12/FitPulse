@@ -3,6 +3,7 @@ import {Pagination} from "@mui/material";
 import{ Box ,Typography,Stack}from "@mui/material"
 import { fetchdata, exerciseOptions } from "../utils/fetchdata";
 import ExercisesCard from "./ExercisesCard";
+import Loader from "./Loader";
 
 function Exercises({exercises,bodyPart,setExercises}) {
   const[curretnPage,setCurrentPage]=useState(1);
@@ -18,11 +19,11 @@ function Exercises({exercises,bodyPart,setExercises}) {
 useEffect(()=>{
   const fetchExercises= async()=>{
     let exerciseData=[];
+  
    
     if(bodyPart==="all"){
-      exerciseData= await fetchdata(
-        "https://exercisedb.p.rapidapi.com/exercises?limit=1500",
-        exerciseOptions
+      exerciseData= await fetchdata( "https://exercisedb.p.rapidapi.com/exercises?limit=100",
+     exerciseOptions
       );
     }
     else{ 
@@ -51,9 +52,9 @@ useEffect(()=>{
       <Stack direction="row" sx={{gap:{lg:'110px',xs:'50px'}}}
       flexWrap="wrap" justifyContent="center"
       >
-        {curretExercise.map((exercise)=>(
+        { curretExercise.length ? curretExercise.map((exercise)=>(
           <ExercisesCard key={exercise.id} exercise={exercise}/>
-        ))}
+        )):<Loader/>}
       </Stack>
       <Stack mt="100px" alignItems="center">
           {exercises.length >9 && (

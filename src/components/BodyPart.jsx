@@ -10,9 +10,9 @@ function BodyPart({ item, setBodyParts, setBodyPart, bodyPart }) {
       justifyContent="center"
       className="bodyPart-card"
       
-      onClick={()=> setBodyPart(item)}
+     
       sx={{
-        borderTop: bodyPart === item ? "4px solid rgb(235, 30, 30) " : " ",
+        borderTop: bodyPart === item ? "4px solid rgb(235, 30, 30) " :'',
         backgroundColor: "#ffffff",
         borderBottomLeftRadius: "20px",
         width: "270px",
@@ -20,7 +20,7 @@ function BodyPart({ item, setBodyParts, setBodyPart, bodyPart }) {
         cursor: "pointer",
         gap: "47px",
       }}
-
+      onClick={()=>setBodyPart(item)}
      
     >
       <img

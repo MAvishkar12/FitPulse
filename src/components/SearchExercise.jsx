@@ -87,7 +87,7 @@ function SearchExercise({setExercises,setBodyPart,bodyPart}) {
       <Box sx={{ position: "relative", width: "100%", padding: "20px" }}>
         <HorizontalScroll 
         data={bodyParts} 
-        
+        isBodyPart
          setBodyParts={setBodyParts}
          bodyPart={bodyPart}
          setBodyPart={setBodyPart}

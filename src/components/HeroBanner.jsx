@@ -1,6 +1,6 @@
 
 import { Box ,Typography,Button } from '@mui/material'
-import HeroBannerImg from "../assets/images/banner.png"
+import HeroBannerImg from "../assets/images/Banner2.jpeg"
 function HeroBanner() {
   return (
     <Box sx={{
@@ -25,7 +25,7 @@ function HeroBanner() {
         }}>
             Exercise
         </Typography>
-        <img src={HeroBannerImg} alt="banner" className='hero-banner-img'></img>
+        <img src={HeroBannerImg}  alt="banner"  style={{borderRadius:"20px",width:"758px",height:"1000px",paddingTop:"10px"}}  className='hero-banner-img'></img>
     </Box>
   )
 }
