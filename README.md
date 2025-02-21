@@ -1,6 +1,10 @@
 #Project Name : FitPulse
 Live : https://humanworkout.netlify.app/
 ![image](https://github.com/user-attachments/assets/017cfa0c-876b-4b9b-973d-9d209aa06791)
+![image](https://github.com/user-attachments/assets/fd105701-61f6-4ca5-a5f1-0acd62746d17)
+![image](https://github.com/user-attachments/assets/bfdcd572-b5c6-4988-a8ae-0d1f0c9a6dff)
+
+
 
 
 
