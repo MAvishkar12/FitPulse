@@ -45,7 +45,7 @@ function SearchExercise({ setExercises, setBodyPart, bodyPart }) {
         mb="50px"
         textAlign="center"
       >
-        Awesome Exercises You <br /> Should Know{" "}
+        Awesome Exercises For You <br /> Should Know{" "}
       </Typography>
       <Box mb="72px" position={"relative"}>
         <TextField
