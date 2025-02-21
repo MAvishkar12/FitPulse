@@ -1,4 +1,9 @@
 #Project Name : FitPulse
+Live : https://humanworkout.netlify.app/
+![image](https://github.com/user-attachments/assets/017cfa0c-876b-4b9b-973d-9d209aa06791)
+
+
+
 #Overview :
 The application is a comprehensive fitness platform featuring a vast collection of over 1,000 exercises, catering to different muscle groups and body parts. Users can easily explore a wide variety of workouts, ensuring they find exercises tailored to their fitness goals. The app organizes exercises based on targeted areas such as arms, legs, core, and full-body workouts, allowing users to structure their routines efficiently.
 
@@ -11,20 +16,25 @@ Additionally, the application enhances user experience by providing similar exer
 4.Responsive Design – Optimized for all devices, ensuring a seamless experience on mobile, tablet, and desktop.
 5.Equipment & No-Equipment Options – Exercises available with and without tools to suit different preferences.
 
-#TechStack
+
+#TechStack :
+
 1.React js
 2.Javascript
 3.Material UI
 4.API
 
-#SetUp
+#Project SetUp :
+
 -npm install
 -npm run dev
 
-#API Documentation
+#API Documentation :
+
 -Source :Rapid API
--API Name a. For exercise : Exercises DB > https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
+-API Name
+a. For exercise : Exercises DB > https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
 b. For Youtube Video : YouTube Search Download > https://rapidapi.com/h0p3rwe/api/youtube-search-and-download
 
-#Deploy
+#Build Command :
 -npm build
